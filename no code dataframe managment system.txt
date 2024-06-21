@@ -1,0 +1,44 @@
+import pandas as pd 
+#its a  dataframe about employees of the company
+data = {
+    "name": ["sumit",None,"singh","carl","singh","luffy","sanji","boku","ironman","rock","nami"],
+    "score": [12,3,45,6,23,35,64,98,98,65,None],
+    "country": ["japan",None,"india","russia","india","uk","sapin","belgium","germany","england","rohit"],
+    "sallary": ["120k$","100k$",None,"54k$","90k$","120k$","200k$","340k$","140k$","240k$","290k$"],
+    "id":[6,98,5,76,76,54,None,43,78,91,87],
+    "profession": [None,"web dev","data engineer","web dev","softwere artitec","app dev","ML","frontend","backend","database","product manager"]
+ }
+ #make dataframe
+create = pd.DataFrame(data)
+print(create)
+a = input("put the name of spacific employe for info:-")
+#its a code of query for the input query
+b = f"name == '{a}'"
+#create the query by targeted the b variable that store query logic
+c = create.query(b)
+#print result
+print(c)
+#here code for  take a info from starting of data frame
+oi = int(input("enter the index number for take info from start:-"))
+io = create.head(oi)
+print(io)
+#here code for  take a info from start to first of data frame
+lo = int(input("enter the index number for take info from end:-"))
+ol = create.tail()
+print(ol)
+ #now here the code for find the duplicates ony by input
+g = input("entre the find duplicates for find duplicates:-")
+if g == "find":
+    h = create.duplicated()  
+    print(h)
+#now here is the code for delete the none value by input the column name
+d = input("press delete for delete nulls from dataframe:-")
+if d == "delete":
+ f = create.dropna()   
+ print(f)
+#now delete null value
+k = input("type dup for delete duplicate value:-")
+if k == "dup":
+    l = create.drop_duplicates()
+    print(l)
+
